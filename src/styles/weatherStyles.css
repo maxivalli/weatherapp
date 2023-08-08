@@ -1,0 +1,240 @@
+/* Estilos generales */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+
+body {
+  font-family: "Comfortaa";
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: url(../assets/backday.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+#root {
+  display: grid;
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 50px;
+  color: aliceblue;
+}
+
+.container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+} 
+
+input {
+  margin-top: 50px;
+  width: 250px;
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 80px;
+  height: 42px;
+  border-radius: 20px;
+  border: 0;
+  margin-left: 10px;
+  background-color: rgb(56, 141, 181);
+  color: aliceblue;
+  font-weight: bolder;
+  transition: 100ms;
+}
+
+button:hover {
+  background-color: rgb(42, 107, 138);
+  scale: 0.9;
+}
+
+#geoloc {
+  height: 42px;
+  width: 42px;
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: 6fr 6fr 6fr 6fr 6fr 6fr;
+  margin-top: 100px;
+}
+
+.ciudad {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: rgb(56, 141, 181);
+  color: aliceblue;
+  justify-self: center;
+  align-content: center;
+  display: grid;
+  transition: 200ms;
+}
+
+.ciudad h2 {
+  color: orange;
+}
+
+.ciudad:hover {
+  scale: 1.2;
+}
+
+.temp {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  justify-self: center;
+  align-content: center;
+  display: grid;
+  transition: 200ms;
+}
+
+.temp:hover {
+  scale: 1.2;
+}
+
+.humedad {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  justify-self: center;
+  align-content: center;
+  display: grid;
+  transition: 200ms;
+}
+
+.humedad:hover {
+  scale: 1.2;
+}
+
+.presion {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  justify-self: center;
+  align-content: center;
+  display: grid;
+  transition: 200ms;
+}
+
+.presion:hover {
+  scale: 1.2;
+}
+
+.cond {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: rgb(56, 141, 181);
+  color: aliceblue;
+  justify-self: center;
+  align-content: top;
+  display: grid;
+  font-size: 14px;
+  transition: 200ms;
+}
+
+.cond:hover {
+  scale: 1.2;
+}
+
+.cond h5 {
+  margin-top: 42px;
+  margin-bottom: -10px;
+}
+
+.cond img {
+  justify-self: center;
+}
+
+.viento {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  justify-self: center;
+  align-content: center;
+  display: grid;
+  transition: 200ms;
+}
+
+.viento:hover {
+  scale: 1.2;
+}
+
+.footer {
+  display: grid;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  justify-self: center;
+  background-color: rgb(56, 141, 181);
+}
+
+@media (max-width: 768px) {
+  
+  h1 {
+    font-size: 30px;
+  }
+
+  input {
+    width: 200px;
+    height: 50px;
+    border-radius: 40px;
+    font-size: 20px;
+  }
+
+  button {
+    width: 70px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  #geoloc {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-right: 0px;
+  }
+
+  .datos {
+    margin-top: 20px;
+    grid-template-columns: 2fr 2fr;
+  }
+
+  .viento {
+    margin-bottom: 80%;
+  }
+}
