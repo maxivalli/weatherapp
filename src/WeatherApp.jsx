@@ -6,13 +6,12 @@ import backnight from "./assets/backnight.png";
 
 export const WeatherApp = () => {
   const urlBase = "https://api.openweathermap.org/data/2.5/weather";
-
   const API_KEY = import.meta.env.VITE_API_KEY;
-
+  /* ----------------------------------------------------------------- */
   const [ciudad, setCiudad] = useState("");
   const [dataClima, setDataClima] = useState(null);
   const [backgroundImage, setBackgroundImage] = useState("");
-
+  /* ----------------------------------------------------------------- */
   const setBackgroundImageByTime = () => {
     const now = new Date();
     const currentHour = now.getHours();
@@ -25,7 +24,7 @@ export const WeatherApp = () => {
       setBackgroundImage(`url(${backnight})`);
     }
   };
-
+  /* ----------------------------------------------------------------- */
   const getGeolocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -41,7 +40,7 @@ export const WeatherApp = () => {
       console.error("La geolocalización no está soportada");
     }
   };
-
+  /* ----------------------------------------------------------------- */
   const fetchWeatherByGeolocation = async (latitude, longitude) => {
     try {
       const response = await fetch(
@@ -57,7 +56,7 @@ export const WeatherApp = () => {
       setDataClima(data);
     } catch (error) {}
   };
-
+  /* ----------------------------------------------------------------- */
   useEffect(() => {
     setBackgroundImageByTime();
     getGeolocation();
@@ -68,16 +67,16 @@ export const WeatherApp = () => {
       document.body.style.backgroundImage = "none";
     };
   }, [backgroundImage]);
-
+  /* ----------------------------------------------------------------- */
   const handleCambioCiudad = (event) => {
     setCiudad(event.target.value);
   };
-
+  /* ----------------------------------------------------------------- */
   const handleSubmit = (event) => {
     event.preventDefault();
     if (ciudad.length > 0) fetchClima();
   };
-
+  /* ----------------------------------------------------------------- */
   const fetchClima = async () => {
     try {
       const response = await fetch(
@@ -99,7 +98,7 @@ export const WeatherApp = () => {
       }
     }
   };
-
+  /* ----------------------------------------------------------------- */
   return (
     <div className="container">
       <h1>Clima en mi ciudad</h1>
