@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import logo from "./assets/logo.gif";
+import backday from './assets/backday.png';
+import backnight from './assets/backnight.png'
 
 export const WeatherApp = () => {
   const urlBase = "https://api.openweathermap.org/data/2.5/weather";
@@ -9,8 +11,22 @@ export const WeatherApp = () => {
 
   const [ciudad, setCiudad] = useState("");
   const [dataClima, setDataClima] = useState(null);
-
   const [backgroundImage, setBackgroundImage] = useState("");
+
+  const setBackgroundImageByTime = () => {
+    const now = new Date();
+    const currentHour = now.getHours();
+  
+    if (currentHour >= 6 && currentHour < 12) {
+      setBackgroundImage("url(./assets/backday.png)");
+    } else if (currentHour >= 12 && currentHour < 19) {
+      setBackgroundImage(`url(${backday})`);
+    } else {
+      setBackgroundImage(`url(${backnight})`);
+    }
+  };
+
+  
   
   const getGeolocation = () => {
     if (navigator.geolocation) {
@@ -45,8 +61,17 @@ export const WeatherApp = () => {
   };
 
   useEffect(() => {
+    setBackgroundImageByTime();
     getGeolocation();
-  }, []);
+  
+    document.body.style.backgroundImage = backgroundImage;
+    
+    return () => {
+      
+      document.body.style.backgroundImage = "none";
+    };
+  }, [backgroundImage]);
+  
 
   const handleCambioCiudad = (event) => {
     setCiudad(event.target.value);
