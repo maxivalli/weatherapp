@@ -59,8 +59,7 @@ export const WeatherApp = () => {
   /* ----------------------------------------------------------------- */
   useEffect(() => {
     setBackgroundImageByTime();
-    getGeolocation();
-
+    
     document.body.style.backgroundImage = backgroundImage;
 
     return () => {
