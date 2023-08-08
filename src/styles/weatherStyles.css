@@ -6,7 +6,6 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-image: url(../assets/backday.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -30,15 +29,22 @@ h1 {
   color: aliceblue;
 }
 
-.container img {
+#logo {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-} 
+  border: 5px solid rgb(56, 141, 181);
+}
+
+/* .container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}  */
 
 input {
   margin-top: 50px;
-  width: 250px;
+  width: 290px;
   height: 40px;
   border: 0;
   border-radius: 20px;
@@ -68,8 +74,9 @@ button:hover {
 }
 
 #geoloc {
+  margin-right: 10px;
   height: 42px;
-  width: 42px;
+  width: 80px;
 }
 
 .datos {
@@ -210,23 +217,34 @@ footer {
 
   input {
     width: 200px;
-    height: 50px;
+    height: 42px;
     border-radius: 40px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   button {
     width: 70px;
-    height: 50px;
+    height: 45px;
     border-radius: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 16px;
   }
 
+  button:hover {
+    scale: none;
+  }
+
   #geoloc {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    margin-right: 0px;
+    width: 70px;
+    height: 45px;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-size: 16px;
+  }
+
+  #geoloc:hover {
+    scale: none;
   }
 
   .datos {

@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import logo from "./assets/logo.gif";
-import backday from './assets/backday.png';
-import backnight from './assets/backnight.png'
+import backday from "./assets/backday.png";
+import backnight from "./assets/backnight.png";
 
 export const WeatherApp = () => {
   const urlBase = "https://api.openweathermap.org/data/2.5/weather";
@@ -16,7 +16,7 @@ export const WeatherApp = () => {
   const setBackgroundImageByTime = () => {
     const now = new Date();
     const currentHour = now.getHours();
-  
+
     if (currentHour >= 6 && currentHour < 12) {
       setBackgroundImage("url(./assets/backday.png)");
     } else if (currentHour >= 12 && currentHour < 19) {
@@ -26,8 +26,6 @@ export const WeatherApp = () => {
     }
   };
 
-  
-  
   const getGeolocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -63,15 +61,13 @@ export const WeatherApp = () => {
   useEffect(() => {
     setBackgroundImageByTime();
     getGeolocation();
-  
+
     document.body.style.backgroundImage = backgroundImage;
-    
+
     return () => {
-      
       document.body.style.backgroundImage = "none";
     };
   }, [backgroundImage]);
-  
 
   const handleCambioCiudad = (event) => {
     setCiudad(event.target.value);
@@ -107,17 +103,16 @@ export const WeatherApp = () => {
   return (
     <div className="container">
       <h1>Clima en mi ciudad</h1>
-      <img src={logo}></img>
+      <img id="logo" src={logo}></img>
       <form onSubmit={handleSubmit}>
-      
+        <button id="geoloc" onClick={getGeolocation}>auto</button>
         <input
           type="text"
           placeholder="Ingrese una ciudad"
           value={ciudad}
           onChange={handleCambioCiudad}
         />
-        <button type="submit">Buscar</button>
-        <button id="geoloc" onClick={getGeolocation}>🌎</button>
+        <button type="submit">buscar</button>
       </form>
       {dataClima && (
         <div className="datos">
