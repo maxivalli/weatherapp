@@ -16,9 +16,7 @@ export const WeatherApp = () => {
     const now = new Date();
     const currentHour = now.getHours();
 
-    if (currentHour >= 6 && currentHour < 12) {
-      setBackgroundImage("url(./assets/backday.png)");
-    } else if (currentHour >= 12 && currentHour < 19) {
+    if (currentHour >= 6 && currentHour < 19) {
       setBackgroundImage(`url(${backday})`);
     } else {
       setBackgroundImage(`url(${backnight})`);
